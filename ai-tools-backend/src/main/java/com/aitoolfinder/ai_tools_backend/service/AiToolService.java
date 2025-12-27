@@ -9,6 +9,9 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 @Service
 public class AiToolService {
 
@@ -47,4 +50,16 @@ public class AiToolService {
     ) {
         return aiToolRepository.findByFilters(category, pricing, rating);
     }
+
+    public void updateAverageRating(Long toolId, Double avgRating) {
+        aiToolRepository.findById(toolId).ifPresent(tool -> {
+            BigDecimal rating = (avgRating == null)
+                    ? BigDecimal.ZERO
+                    : BigDecimal.valueOf(avgRating).setScale(1, RoundingMode.HALF_UP);
+
+            tool.setAverageRating(rating);
+            aiToolRepository.save(tool);
+        });
+    }
+
 }
