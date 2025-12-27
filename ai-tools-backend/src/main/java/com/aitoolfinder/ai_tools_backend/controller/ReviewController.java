@@ -15,12 +15,14 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
 
-    /**
-     * POST /review
-     */
     @PostMapping
-    public ResponseEntity<Review> submitReview(@RequestBody Review review) {
-        return ResponseEntity.ok(reviewService.submitReview(review));
+    public ResponseEntity<Review> submitReview(
+            @RequestParam Long toolId,
+            @RequestParam int rating,
+            @RequestParam(required = false) String comment
+    ) {
+        return ResponseEntity.ok(
+                reviewService.submitReview(toolId, rating, comment)
+        );
     }
-
 }

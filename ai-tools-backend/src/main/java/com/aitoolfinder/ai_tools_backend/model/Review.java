@@ -11,10 +11,11 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "tool_id", nullable = false)
-    private Long toolId;
+    @ManyToOne
+    @JoinColumn(name = "tool_id", nullable = false)
+    private AiTool tool;
 
-    private Integer rating;
+    private int rating;
 
     private String comment;
 
@@ -28,17 +29,15 @@ public class Review {
 
     // getters & setters
     public Long getId() { return id; }
-    public Long getToolId() { return toolId; }
-    public void setToolId(Long toolId) { this.toolId = toolId; }
+    public AiTool getTool() { return tool; }
+    public void setTool(AiTool tool) { this.tool = tool; }
 
-    public Integer getRating() { return rating; }
-    public void setRating(Integer rating) { this.rating = rating; }
+    public int getRating() { return rating; }
+    public void setRating(int rating) { this.rating = rating; }
 
     public String getComment() { return comment; }
     public void setComment(String comment) { this.comment = comment; }
 
     public ReviewStatus getStatus() { return status; }
     public void setStatus(ReviewStatus status) { this.status = status; }
-
-    public LocalDateTime getCreatedAt() { return createdAt; }
 }

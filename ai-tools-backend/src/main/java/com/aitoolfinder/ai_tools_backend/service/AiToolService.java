@@ -61,5 +61,25 @@ public class AiToolService {
             aiToolRepository.save(tool);
         });
     }
+    public AiTool saveTool(AiTool tool) {
+        return aiToolRepository.save(tool);
+    }
+
+    public AiTool updateTool(Long id, AiTool tool) {
+        AiTool existing = aiToolRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tool not found"));
+
+        existing.setName(tool.getName());
+        existing.setUseCase(tool.getUseCase());
+        existing.setCategory(tool.getCategory());
+        existing.setPricingType(tool.getPricingType());
+
+        return aiToolRepository.save(existing);
+    }
+
+    public void deleteTool(Long id) {
+        aiToolRepository.deleteById(id);
+    }
+
 
 }
