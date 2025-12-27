@@ -31,7 +31,7 @@ CREATE INDEX idx_tool_id ON reviews(tool_id);
 CREATE INDEX idx_status ON reviews(status);
 
 
-ALTER TABLE ai_tools ADD COLUMN use_case VARCHAR(255);
+--ALTER TABLE ai_tools ADD COLUMN use_case VARCHAR(255);
 
 
 INSERT INTO ai_tools (name, use_case, category, pricing_type, average_rating) VALUES
