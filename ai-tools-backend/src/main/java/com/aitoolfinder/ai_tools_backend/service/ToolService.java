@@ -2,8 +2,6 @@ package com.aitoolfinder.ai_tools_backend.service;
 
 import com.aitoolfinder.ai_tools_backend.entity.AiTool;
 import com.aitoolfinder.ai_tools_backend.repository.AiToolRepository;
-import com.aitoolfinder.ai_tools_backend.repository.AiToolSpecification;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,21 +9,34 @@ import java.util.List;
 @Service
 public class ToolService {
 
-    private final AiToolRepository repository;
+    private final AiToolRepository toolRepository;
 
-    public ToolService(AiToolRepository repository) {
-        this.repository = repository;
+    public ToolService(AiToolRepository toolRepository) {
+        this.toolRepository = toolRepository;
     }
 
-    public List<AiTool> getFilteredTools(String category,
-                                         String pricing,
-                                         Double rating) {
-
-        Specification<AiTool> spec = Specification
-                .where(AiToolSpecification.hasCategory(category))
-                .and(AiToolSpecification.hasPricing(pricing))
-                .and(AiToolSpecification.hasMinRating(rating));
-
-        return repository.findAll(spec);
+    // Used by ReviewService & RatingService
+    public AiTool getToolOrThrow(Long toolId) {
+        return toolRepository.findById(toolId)
+                .orElseThrow(() -> new RuntimeException("Tool not found"));
     }
+
+    // Used by ToolController (GET /tools/{id})
+    public AiTool getToolById(Long id) {
+        return toolRepository.findById(id).orElse(null);
+    }
+
+    // Used by ToolController (GET /tools)
+    public List<AiTool> getAllTools() {
+        return toolRepository.findAll();
+    }
+
+    // Used by RatingService
+    public AiTool save(AiTool tool) {
+        return toolRepository.save(tool);
+    }
+    public void delete(Long id) {
+        toolRepository.deleteById(id);
+    }
+
 }

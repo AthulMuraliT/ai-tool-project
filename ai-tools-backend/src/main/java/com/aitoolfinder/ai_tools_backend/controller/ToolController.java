@@ -18,22 +18,27 @@ public class ToolController {
         this.toolService = toolService;
     }
 
+    // GET /tools
     @GetMapping
-    public ResponseEntity<?> getFilteredTools(
-            @RequestParam(required = false) String category,
-            @RequestParam(required = false) String pricing,
-            @RequestParam(required = false) Double rating
-    ) {
-
-        List<AiTool> tools =
-                toolService.getFilteredTools(category, pricing, rating);
-
-        if (tools.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-
-        return ResponseEntity.ok(tools);
+    public ResponseEntity<List<AiTool>> getAllTools() {
+        List<AiTool> tools = toolService.getAllTools();
+        return tools.isEmpty()
+                ? ResponseEntity.noContent().build()
+                : ResponseEntity.ok(tools);
     }
 
+    // GET /tools/{id}
+    @GetMapping("/{id}")
+    public ResponseEntity<AiTool> getToolById(@PathVariable Long id) {
+        AiTool tool = toolService.getToolById(id);
+        return tool == null
+                ? ResponseEntity.notFound().build()
+                : ResponseEntity.ok(tool);
+
+    }
+    @PostConstruct
+    public void init() {
+        System.out.println(">>> ToolController LOADED <<<");
+    }
 
 }
