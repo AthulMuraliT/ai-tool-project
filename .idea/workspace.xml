@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16597e28-7a68-48fa-8e8c-22e1d639eb01" name="Changes" comment="" />
+    <list default="true" id="16597e28-7a68-48fa-8e8c-22e1d639eb01" name="Changes" comment="Frontend updated">
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/AdminReviews.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/AdminTools.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ToolDetails.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ReviewForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ReviewForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminReviews.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminReviews.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminTools.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminTools.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ToolDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ToolDetails.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +25,7 @@
         <option value="JavaScript File" />
         <option value="JSX File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -73,6 +83,7 @@
     "Spring Boot.AiToolFinderApplication.executor": "Run",
     "git-widget-placeholder": "Prasanth__FullStack",
     "kotlin-language-version-configured": "true",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -125,6 +136,7 @@
       <workItem from="1767427385403" duration="390000" />
       <workItem from="1767430887361" duration="662000" />
       <workItem from="1767432154339" duration="4558000" />
+      <workItem from="1767441460444" duration="1187000" />
     </task>
     <task id="LOCAL-00001" summary="made a backend folder">
       <option name="closed" value="true" />
@@ -142,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767413288315</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Frontend updated">
+      <option name="closed" value="true" />
+      <created>1767437345314</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767437345314</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +181,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="made a backend folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="made a backend folder" />
+    <MESSAGE value="Frontend updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frontend updated" />
   </component>
 </project>

@@ -1,0 +1,99 @@
+
+.admin-page {
+    padding: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.admin-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+/* Card */
+.card {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 32px;
+}
+
+.card-title {
+    margin-bottom: 16px;
+}
+
+/* Form */
+.form-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.input {
+    flex: 2;
+    min-width: 200px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #020617;
+    color: #e5e7eb;
+}
+
+.select {
+    flex: 1;
+    min-width: 140px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #020617;
+    color: #e5e7eb;
+}
+
+.primary-btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Table */
+.table {
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.header-row {
+    background: #020617;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.tool-name {
+    font-weight: 500;
+}
+
+.tool-category {
+    color: #94a3b8;
+}
+
+.delete-btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

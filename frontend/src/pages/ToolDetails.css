@@ -1,0 +1,61 @@
+/* Page */
+.tool-page {
+    padding: 40px 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+.tool-header {
+    background: linear-gradient(135deg, #020617, #020617cc);
+    border: 1px solid #1e293b;
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 40px;
+}
+
+.tool-name {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.tool-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #94a3b8;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.rating {
+    color: #facc15;
+    font-weight: 600;
+}
+
+.dot {
+    opacity: 0.5;
+}
+
+.tool-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e5e7eb;
+    max-width: 600px;
+}
+
+/* Review Section */
+.review-section {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 20px;
+    padding: 28px;
+}
+
+/* Loading */
+.loading {
+    padding: 40px;
+    text-align: center;
+    color: #94a3b8;
+}

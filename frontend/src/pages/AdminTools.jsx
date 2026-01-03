@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import api from "../api/api";
+import "./AdminTools.css";
 
 export default function AdminTools() {
     const [tools, setTools] = useState([]);
     const [name, setName] = useState("");
     const [category, setCategory] = useState("AI");
-    const [pricing, setPricing] = useState("FREE");
+    const [pricingType, setPricingType] = useState("FREE");
 
     const loadTools = async () => {
-        const res = await api.get("/tools"); // correct endpoint
+        const res = await api.get("/tools");
         setTools(res.data);
     };
 
@@ -17,53 +18,89 @@ export default function AdminTools() {
     }, []);
 
     const createTool = async () => {
+        if (!name.trim()) return;
+
         await api.post("/admin/tools", {
             name,
             category,
-            pricing
+            pricingType,
+            useCase: "Admin created tool",
         });
 
         setName("");
-        await loadTools();
+        loadTools();
     };
 
     const deleteTool = async (id) => {
         await api.delete(`/admin/tools/${id}`);
-        await loadTools();
+        loadTools();
     };
 
     return (
-        <div style={{ padding: 32 }}>
-            <h2>Admin – Tool Management</h2>
+        <div className="admin-page">
+            <h2 className="admin-title">Admin – Tool Management</h2>
 
-            <div>
-                <input
-                    placeholder="Tool name"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                />
+            {/* CREATE TOOL */}
+            <div className="card">
+                <h3 className="card-title">Create New Tool</h3>
 
-                <select value={category} onChange={e => setCategory(e.target.value)}>
-                    <option value="AI">AI</option>
-                    <option value="DEV">DEV</option>
-                </select>
+                <div className="form-row">
+                    <input
+                        className="input"
+                        placeholder="Tool name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
 
-                <select value={pricing} onChange={e => setPricing(e.target.value)}>
-                    <option value="FREE">Free</option>
-                    <option value="PAID">Paid</option>
-                </select>
+                    <select
+                        className="select"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                    >
+                        <option value="AI">AI</option>
+                        <option value="Development">Development</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Productivity">Productivity</option>
+                        <option value="Design">Design</option>
+                    </select>
 
-                <button onClick={createTool}>Create Tool</button>
+                    <select
+                        className="select"
+                        value={pricingType}
+                        onChange={(e) => setPricingType(e.target.value)}
+                    >
+                        <option value="FREE">Free</option>
+                        <option value="PAID">Paid</option>
+                        <option value="SUBSCRIPTION">Subscription</option>
+                    </select>
+
+                    <button className="primary-btn" onClick={createTool}>
+                        Create Tool
+                    </button>
+                </div>
             </div>
 
-            <hr />
-
-            {tools.map(t => (
-                <div key={t.id}>
-                    <strong>{t.name}</strong> — {t.category} — {t.pricing}
-                    <button onClick={() => deleteTool(t.id)}>Delete</button>
+            {/* TOOL LIST */}
+            <div className="table">
+                <div className="row header-row">
+                    <span>Name</span>
+                    <span>Category</span>
+                    <span>Action</span>
                 </div>
-            ))}
+
+                {tools.map((tool) => (
+                    <div key={tool.id} className="row">
+                        <span className="tool-name">{tool.name}</span>
+                        <span className="tool-category">{tool.category}</span>
+                        <button
+                            className="delete-btn"
+                            onClick={() => deleteTool(tool.id)}
+                        >
+                            Delete
+                        </button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
