@@ -1,0 +1,4 @@
+PUT http://localhost:8080/api/admin/reviews/1/reject
+
+
+

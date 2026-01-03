@@ -1,0 +1,8 @@
+POST http://localhost:8080/api/reviews
+Content-Type: application/json
+
+{
+  "toolId": 6,
+  "rating": 5,
+  "comment": "very accurate"
+}
