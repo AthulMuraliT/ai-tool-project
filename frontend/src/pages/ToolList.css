@@ -1,0 +1,109 @@
+.tool-page {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.page-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.page-subtitle {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  margin-bottom: 40px;
+}
+
+.filter-bar select,
+.search-input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* Grid */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Card */
+.tool-card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.tool-card h3 {
+  margin-bottom: 6px;
+  color: #1f2937;
+}
+
+.use-case {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  background: #eef2ff;
+  color: #3555ff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.pricing {
+  background: #ecfeff;
+  color: #0f766e;
+}
+
+.rating {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* States */
+.status {
+  color: #6b7280;
+  margin-top: 20px;
+}
+
+.error {
+  color: #dc2626;
+}

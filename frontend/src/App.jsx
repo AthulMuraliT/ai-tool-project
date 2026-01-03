@@ -7,22 +7,25 @@ import SubmitReview from "./pages/SubmitReview";
 import AdminTools from "./pages/AdminTools";
 import AdminReviews from "./pages/AdminReviews";
 import NotFound from "./pages/NotFound";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route path="/tools" element={<ToolList />} />
-        <Route path="/tools/:id" element={<ToolDetails />} />
-        <Route path="/tools/:id/review" element={<SubmitReview />} />
+          <Route path="/tools" element={<ToolList />} />
+          <Route path="/tools/:id" element={<ToolDetails />} />
+          <Route path="/tools/:id/review" element={<SubmitReview />} />
 
-        <Route path="/admin/tools" element={<AdminTools />} />
-        <Route path="/admin/reviews" element={<AdminReviews />} />
+          <Route path="/admin/tools" element={<AdminTools />} />
+          <Route path="/admin/reviews" element={<AdminReviews />} />
 
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 }
