@@ -1,0 +1,86 @@
+.review-page {
+  max-width: 700px;
+  margin: auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #3555ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Card */
+.review-card {
+  background: white;
+  padding: 36px;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.review-card h1 {
+  font-size: 32px;
+  color: #111827;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* Form */
+.review-form {
+  margin-top: 28px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
+.primary-btn {
+  margin-top: 10px;
+  background: #ff5722;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* States */
+.success {
+  margin-top: 20px;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.error {
+  margin-top: 20px;
+  color: #dc2626;
+  font-weight: 600;
+}
